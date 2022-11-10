@@ -9,14 +9,15 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+		<Title>Package Title</Title>
 		<Description>Interfaces for common platform capabilities</Description>
 		<Company>MetaFac</Company>
 		<Product>Platform</Product>
 		<PackageLicenseUrl></PackageLicenseUrl>
 		<Copyright>Copyright (c) 2022 MetaFac</Copyright>
 		<Authors>MetaFac Contributors</Authors>
-		<PackageProjectUrl>https://dev.azure.com/labapps21/LAP</PackageProjectUrl>
-		<RepositoryUrl>https://dev.azure.com/labapps21/LAP/_git/Platform</RepositoryUrl>
+		<PackageProjectUrl>https://dev.azure.com/MetaFac/OSR</PackageProjectUrl>
+		<RepositoryUrl>https://dev.azure.com/MetaFac/OSR/_git/Platform</RepositoryUrl>
 		<RepositoryType>Git</RepositoryType>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<SignAssembly>true</SignAssembly>
