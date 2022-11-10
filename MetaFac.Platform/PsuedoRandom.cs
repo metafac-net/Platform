@@ -4,19 +4,23 @@ namespace MetaFac.Platform
 {
     public class PsuedoRandom : IRandomNumberSource
     {
+#if NET6_0_OR_GREATER
+#else
         private readonly Random _rng;
+#endif
 
         public PsuedoRandom()
         {
+#if NET6_0_OR_GREATER
+#else
             _rng = new Random(Environment.TickCount);
+#endif
         }
 
         public int NextInt32()
         {
-#if NET6_0
-            return _rng.Next();
-#elif NET5_0
-            return _rng.Next();
+#if NET6_0_OR_GREATER
+            return Random.Shared.Next();
 #else
             return _rng.Next();
 #endif
@@ -24,10 +28,8 @@ namespace MetaFac.Platform
 
         public long NextInt64()
         {
-#if NET6_0
-            return _rng.NextInt64();
-#elif NET5_0
-            return ((long)_rng.Next()) * _rng.Next();
+#if NET6_0_OR_GREATER
+            return Random.Shared.NextInt64();
 #else
             return ((long)_rng.Next()) * _rng.Next();
 #endif
@@ -35,9 +37,9 @@ namespace MetaFac.Platform
 
         public Guid NextGuid()
         {
-#if NET6_0 || NET5_0
+#if NET6_0_OR_GREATER
             Span<byte> span = stackalloc byte[16];
-            _rng.NextBytes(span);
+            Random.Shared.NextBytes(span);
             return new Guid(span);
 #else
             var bytes = new byte[16];
