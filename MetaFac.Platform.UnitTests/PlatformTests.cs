@@ -1,8 +1,5 @@
 ﻿using FluentAssertions;
 using MetaFac.Platform.Testing;
-using PublicApiGenerator;
-using System.Threading.Tasks;
-using VerifyXunit;
 using Xunit;
 
 namespace MetaFac.Platform.UnitTests
