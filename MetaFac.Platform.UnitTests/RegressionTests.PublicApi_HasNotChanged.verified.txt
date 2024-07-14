@@ -1,0 +1,47 @@
+﻿namespace MetaFac.Platform
+{
+    public interface IMonotonicClock
+    {
+        long GetUniqueTicks();
+    }
+    public interface IPlatform
+    {
+        MetaFac.Platform.IMonotonicClock MonotonicClock { get; }
+        MetaFac.Platform.IRandomNumberSource RandomNumberSource { get; }
+        MetaFac.Platform.ITimeOfDayClock TimeOfDayClock { get; }
+    }
+    public interface IRandomNumberSource
+    {
+        System.Guid NextGuid();
+        int NextInt32();
+        long NextInt64();
+    }
+    public interface ITimeOfDayClock
+    {
+        System.DateTimeOffset GetDateTimeOffset();
+    }
+    public class MonotonicClock : MetaFac.Platform.IMonotonicClock
+    {
+        public MonotonicClock(MetaFac.Platform.ITimeOfDayClock timeOfDayClock) { }
+        public long GetUniqueTicks() { }
+    }
+    public class PsuedoRandom : MetaFac.Platform.IRandomNumberSource
+    {
+        public PsuedoRandom() { }
+        public System.Guid NextGuid() { }
+        public int NextInt32() { }
+        public long NextInt64() { }
+    }
+    public class RealPlatform : MetaFac.Platform.IPlatform
+    {
+        public RealPlatform() { }
+        public MetaFac.Platform.IMonotonicClock MonotonicClock { get; }
+        public MetaFac.Platform.IRandomNumberSource RandomNumberSource { get; }
+        public MetaFac.Platform.ITimeOfDayClock TimeOfDayClock { get; }
+    }
+    public class TimeOfDayClock : MetaFac.Platform.ITimeOfDayClock
+    {
+        public TimeOfDayClock() { }
+        public System.DateTimeOffset GetDateTimeOffset() { }
+    }
+}
