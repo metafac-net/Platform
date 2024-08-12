@@ -14,10 +14,10 @@
 	<Company>MetaFac</Company>
     <Product>Platform</Product>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <Copyright>Copyright (c) 2020-2023 MetaFac</Copyright>
+    <Copyright>Copyright (c) 2020-2024 MetaFac</Copyright>
 	<Authors>MetaFac Contributors</Authors>
-    <PackageProjectUrl>https://dev.azure.com/MetaFac/OSR</PackageProjectUrl>
-    <RepositoryUrl>https://dev.azure.com/MetaFac/OSR/_git/Platform</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/metafac-net/Platform</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/metafac-net/Platform</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <SignAssembly>true</SignAssembly>
