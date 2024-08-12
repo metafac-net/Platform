@@ -1,6 +1,6 @@
 # Platform 
 
-[![Build Status](https://dev.azure.com/MetaFac/OSR/_apis/build/status/Platform?branchName=main)](https://dev.azure.com/MetaFac/OSR/_build/latest?definitionId=5&branchName=main)
+[![Build-Deploy](https://github.com/metafac-net/Platform/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/metafac-net/Platform/actions/workflows/dotnet.yml)
 
 Abstractions and implementations for common platform capabilities:
 - Time Of Day Clock
