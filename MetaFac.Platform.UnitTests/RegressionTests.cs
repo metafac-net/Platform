@@ -1,5 +1,5 @@
-﻿using FluentAssertions;
-using PublicApiGenerator;
+﻿using PublicApiGenerator;
+using Shouldly;
 using System.Threading.Tasks;
 using VerifyXunit;
 using Xunit;
@@ -11,7 +11,7 @@ namespace MetaFac.Platform.UnitTests
         [Fact]
         public void VersionCheck()
         {
-            ThisAssembly.AssemblyVersion.Should().Be("2.0.0.0");
+            ThisAssembly.AssemblyVersion.ShouldBe("2.0.0.0");
         }
 
         [Fact]

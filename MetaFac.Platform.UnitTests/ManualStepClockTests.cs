@@ -1,5 +1,5 @@
-using FluentAssertions;
 using MetaFac.Platform.Testing;
+using Shouldly;
 using System;
 using Xunit;
 
@@ -14,8 +14,8 @@ namespace MetaFac.Platform.UnitTests
             var clock = new ManualStepClock(inp0);
 
             var out0 = clock.GetDateTimeOffset();
-            out0.UtcDateTime.Should().Be(inp0);
-            out0.Should().Be(new DateTimeOffset(inp0, TimeSpan.Zero));
+            out0.UtcDateTime.ShouldBe(inp0);
+            out0.ShouldBe(new DateTimeOffset(inp0, TimeSpan.Zero));
         }
 
         [Fact]
@@ -25,7 +25,7 @@ namespace MetaFac.Platform.UnitTests
             var clock = new ManualStepClock(inp0);
 
             var out0 = clock.GetDateTimeOffset();
-            out0.Should().Be(inp0);
+            out0.ShouldBe(inp0);
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace MetaFac.Platform.UnitTests
             long interval = TimeSpan.FromHours(1).Ticks;
             var out1 = clock.Advance(interval);
 
-            out1.Should().Be(inp0.AddTicks(interval));
+            out1.ShouldBe(inp0.AddTicks(interval));
         }
 
         [Fact]
@@ -49,7 +49,7 @@ namespace MetaFac.Platform.UnitTests
             var interval = TimeSpan.FromHours(1);
             var out1 = clock.Advance(interval);
 
-            out1.Should().Be(inp0.AddTicks(interval.Ticks));
+            out1.ShouldBe(inp0.AddTicks(interval.Ticks));
         }
     }
 }

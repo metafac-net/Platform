@@ -1,5 +1,5 @@
-﻿using FluentAssertions;
-using MetaFac.Platform.Testing;
+﻿using MetaFac.Platform.Testing;
+using Shouldly;
 using Xunit;
 
 namespace MetaFac.Platform.UnitTests
@@ -12,9 +12,9 @@ namespace MetaFac.Platform.UnitTests
             var random = new PsuedoRandomWithSeed(0);
             int result = random.NextInt32();
 #if NET6_0
-            result.Should().Be(1559595546);
+            result.ShouldBe(1559595546);
 #else
-            result.Should().Be(1559595546);
+            result.ShouldBe(1559595546);
 #endif
         }
 
@@ -24,9 +24,9 @@ namespace MetaFac.Platform.UnitTests
             var random = new PsuedoRandomWithSeed(0);
             long result = random.NextInt64();
 #if NET6_0
-            result.Should().Be(7083764782846131554L);
+            result.ShouldBe(7083764782846131554L);
 #else
-            result.Should().Be(2737390941873472824L);
+            result.ShouldBe(2737390941873472824L);
 #endif
         }
 
@@ -35,7 +35,7 @@ namespace MetaFac.Platform.UnitTests
         {
             var random = new PsuedoRandomWithSeed(0);
             var result = random.NextGuid();
-            result.ToString("N").Should().Be("6f460c1a755dd8e4ad6765d5f519dbc8");
+            result.ToString("N").ShouldBe("6f460c1a755dd8e4ad6765d5f519dbc8");
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace MetaFac.Platform.UnitTests
         {
             var random = new SequentialNumberSource(0);
             int result = random.NextInt32();
-            result.Should().Be(1);
+            result.ShouldBe(1);
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace MetaFac.Platform.UnitTests
         {
             var random = new SequentialNumberSource(0);
             long result = random.NextInt64();
-            result.Should().Be(1L);
+            result.ShouldBe(1L);
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace MetaFac.Platform.UnitTests
         {
             var random = new SequentialNumberSource(0);
             var result = random.NextGuid();
-            result.ToString("N").Should().Be("00000001000000000200000000000000");
+            result.ToString("N").ShouldBe("00000001000000000200000000000000");
         }
     }
 }

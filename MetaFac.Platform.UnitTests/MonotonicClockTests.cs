@@ -1,5 +1,5 @@
-﻿using FluentAssertions;
-using MetaFac.Platform.Testing;
+﻿using MetaFac.Platform.Testing;
+using Shouldly;
 using System;
 using Xunit;
 
@@ -14,10 +14,10 @@ namespace MetaFac.Platform.UnitTests
             var monotonicClock = new MonotonicTimeOfDayClock(timeOfDayClock);
 
             var t0 = monotonicClock.GetUniqueTicks();
-            t0.Should().Be(1L);
+            t0.ShouldBe(1L);
 
             var t1 = monotonicClock.GetUniqueTicks();
-            t1.Should().Be(2L);
+            t1.ShouldBe(2L);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace MetaFac.Platform.UnitTests
             var t0 = monotonicClock.GetUniqueTicks();
 
             var t1 = monotonicClock.GetUniqueTicks();
-            t1.Should().BeGreaterThan(t0);
+            t1.ShouldBeGreaterThan(t0);
         }
     }
 }
