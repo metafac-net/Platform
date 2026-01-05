@@ -17,7 +17,7 @@ Abstractions and implementations for common platform capabilities:
 - MonotonicClock
 - PsuedoRandom
 
-## Testing  fakes
+## Testing fakes
 - ManualStepClock
 - MonotonicTimeOfDayClock
 - PseudoRandomWithSeed
