@@ -11,7 +11,7 @@ namespace MetaFac.Platform.UnitTests
         [Fact]
         public void VersionCheck()
         {
-            ThisAssembly.AssemblyVersion.ShouldBe("2.0.0.0");
+            ThisAssembly.AssemblyVersion.ShouldBe("2.1.0.0");
         }
 
         [Fact]
